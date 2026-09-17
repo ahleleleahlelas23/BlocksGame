@@ -24,10 +24,10 @@ public class Main {
         JFrame menuFrame = new JFrame("Blocks Game - Improved Edition");
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menuFrame.setResizable(false);
+        menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Полноэкранный режим
 
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(new Color(30, 30, 50));
-        panel.setPreferredSize(new Dimension(700, 500));
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;

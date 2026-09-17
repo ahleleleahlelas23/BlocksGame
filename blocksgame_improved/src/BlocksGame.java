@@ -53,12 +53,12 @@ public class BlocksGame extends GameEngine {
     
     private static final double PLAYER_WIDTH = 30;
     private static final double PLAYER_HEIGHT = 40;
-    private static final double MOVE_SPEED = 300;
-    private static final double MAX_MOVE_SPEED = 400;
-    private static final double ACCELERATION = 800;
-    private static final double FRICTION = 600;
-    private static final double JUMP_SPEED = -450;
-    private static final double GRAVITY = 900;
+    private static final double MOVE_SPEED = 200;
+    private static final double MAX_MOVE_SPEED = 250;
+    private static final double ACCELERATION = 600;
+    private static final double FRICTION = 500;
+    private static final double JUMP_SPEED = -400;
+    private static final double GRAVITY = 800;
 
     private int selectedSlot = 0;
     
@@ -283,9 +283,9 @@ public class BlocksGame extends GameEngine {
             for (int c = 0; c < WORLD_WIDTH; c++) {
                 if (world[r][c] != 0 && pr.intersects(new Rectangle(c * BLOCK_SIZE, r * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))) {
                     if (playerVx > 0) {
-                        playerX = c * BLOCK_SIZE - PLAYER_WIDTH - 0.1;
+                        playerX = c * BLOCK_SIZE - PLAYER_WIDTH;
                     } else if (playerVx < 0) {
-                        playerX = c * BLOCK_SIZE + BLOCK_SIZE + 0.1;
+                        playerX = c * BLOCK_SIZE + BLOCK_SIZE;
                     }
                     playerVx = 0;
                     pr.setRect(playerX, playerY, PLAYER_WIDTH, PLAYER_HEIGHT);
@@ -504,13 +504,13 @@ public class BlocksGame extends GameEngine {
 
             // Выделение выбранного слота
             if (i == selectedSlot) {
-                g.setColor(new Color(255, 255, 255, 200));
+                g.setColor(new Color(255, 200, 0, 200));
                 g.setStroke(new BasicStroke(3));
                 g.drawRect(x - 2, y - 2, slotSize + 4, slotSize + 4);
                 
                 // Пульсирующий эффект
                 float pulse = (float)(Math.sin(System.currentTimeMillis() / 200.0) * 0.3 + 0.7);
-                g.setColor(new Color(255, 255, 100, (int)(pulse * 100)));
+                g.setColor(new Color(255, 200, 0, (int)(pulse * 100)));
                 g.fillRoundRect(x - 3, y - 3, slotSize + 6, slotSize + 6, 6, 6);
                 g.setStroke(new BasicStroke(1));
             }
