@@ -21,6 +21,7 @@ public class BlocksGame extends JPanel implements ActionListener, KeyListener, M
     private boolean[] keys = new boolean[256];
     private int selectedBlock = 1;
     private JFrame frame;
+    private javax.swing.Timer gameTimer;
     
     private int cameraX = 0;
     private int cameraY = 0;
@@ -45,7 +46,19 @@ public class BlocksGame extends JPanel implements ActionListener, KeyListener, M
         addMouseListener(this);
         addMouseMotionListener(this);
         generateWorld();
-        new javax.swing.Timer(16, this).start();
+    }
+    
+    public void init() {
+        gameTimer = new javax.swing.Timer(16, this);
+        gameTimer.start();
+    }
+    
+    public void start() {
+        if (gameTimer != null) gameTimer.start();
+    }
+    
+    public void stop() {
+        if (gameTimer != null) gameTimer.stop();
     }
     
     private void generateWorld() {

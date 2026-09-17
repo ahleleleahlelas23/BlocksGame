@@ -1,69 +1,41 @@
 ```
-# Compiled and build artifacts
-*.jar
+# Compiled Java files
 *.class
-*.pyc
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
 
-# Dependencies
-.venv/
-venv/
-__pycache__/
-node_modules/
-dist/
+# Package files
+*.jar
+*.war
+*.ear
+
+# Build directories
 build/
 target/
-.gradle/
-.mypy_cache/
-.pytest_cache/
+out/
 
-# Logs and temp files
+# Dependencies
+lib/
+libs/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Logs
 *.log
-*.tmp
-*.swp
-*.swo
 
 # Environment
 .env
 .env.local
 *.env.*
 
-# Editors
-.vscode/
-.idea/
-
-# System files
+# OS generated files
 .DS_Store
 Thumbs.db
 
-# Coverage
-coverage/
-htmlcov/
-.coverage
-
-# Archives
-*.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
+# Temporary files
+*.tmp
+*.temp
 ```
