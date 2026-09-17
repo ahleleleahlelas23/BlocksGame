@@ -1,0 +1,41 @@
+```
+# Compiled Java files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Build directories
+build/
+target/
+out/
+
+# Dependencies
+lib/
+libs/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+```
