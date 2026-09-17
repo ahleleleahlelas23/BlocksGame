@@ -1,0 +1,11 @@
+```
+# Compiled Java classes
+*.class
+
+# Build output
+out/
+build/
+
+# JAR files
+*.jar
+```
