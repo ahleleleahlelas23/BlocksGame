@@ -114,12 +114,14 @@ public class Main {
         JFrame gameFrame = new JFrame("Blocks Game - Improved");
         gameFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         gameFrame.setResizable(false);
+        gameFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Полноэкранный режим
 
         BlocksGame game = new BlocksGame();
         gameFrame.add(game);
-        gameFrame.pack();
+        gameFrame.setVisible(true); // Сначала показываем
+        gameFrame.pack(); // Затем подстраиваем размер
         gameFrame.setLocationRelativeTo(null);
-        gameFrame.setVisible(true);
+        
         game.init();
         game.start();
 

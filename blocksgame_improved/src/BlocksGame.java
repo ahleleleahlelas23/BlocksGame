@@ -301,11 +301,13 @@ public class BlocksGame extends GameEngine {
             for (int c = 0; c < WORLD_WIDTH; c++) {
                 if (world[r][c] != 0 && pr.intersects(new Rectangle(c * BLOCK_SIZE, r * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))) {
                     if (playerVy > 0) {
-                        playerY = r * BLOCK_SIZE - PLAYER_HEIGHT - 0.1;
+                        // Падаем вниз - ставим на блок
+                        playerY = r * BLOCK_SIZE - PLAYER_HEIGHT;
                         playerVy = 0;
                         onGround = true;
                     } else if (playerVy < 0) {
-                        playerY = r * BLOCK_SIZE + BLOCK_SIZE + 0.1;
+                        // Прыгаем вверх - ударяемся головой
+                        playerY = r * BLOCK_SIZE + BLOCK_SIZE;
                         playerVy = 0;
                     }
                     pr.setRect(playerX, playerY, PLAYER_WIDTH, PLAYER_HEIGHT);
@@ -591,6 +593,6 @@ public class BlocksGame extends GameEngine {
         
         // Отрисовка интерфейса
         drawInventory(g);
-        drawStats(g);
+        // Статистика удалена по запросу пользователя
     }
 }

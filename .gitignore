@@ -1,25 +1,10 @@
 ```
-# Compressed files
+# Compiled Java classes
+*.class
+
+# Build output directory
+out/
+
+# Compressed source code archives
 *.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
 ```
