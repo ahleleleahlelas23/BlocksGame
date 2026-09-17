@@ -409,11 +409,11 @@ public class BlocksGame extends GameEngine {
         int px = (int) playerX;
         int py = (int) playerY;
 
-        // Тень под игроком
-        if (onGround) {
-            g.setColor(new Color(0, 0, 0, 80));
-            g.fillOval(px + 5, py + (int)PLAYER_HEIGHT - 2, 20, 6);
-        }
+        // Тень под игроком (рисуем всегда, но прозрачность зависит от высоты над землей)
+        double distToGround = onGround ? 0 : Math.min(50, playerVy > 0 ? playerVy / 16 : 10);
+        int shadowAlpha = Math.max(20, 80 - (int)(distToGround * 1.5));
+        g.setColor(new Color(0, 0, 0, shadowAlpha));
+        g.fillOval(px + 5, py + (int)PLAYER_HEIGHT + 2, 20, 6);
 
         // Тело (синяя рубашка)
         g.setColor(new Color(0, 120, 200));
